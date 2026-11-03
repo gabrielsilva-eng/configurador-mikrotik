@@ -1,0 +1,32 @@
+name: Compilar Configurador MikroTik
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: Gerar executável
+        run: pyinstaller --noconfirm --clean --onefile --windowed --name Configurador_MikroTik configurador_mikrotik.py
+
+      - name: Disponibilizar executável
+        uses: actions/upload-artifact@v4
+        with:
+          name: Configurador_MikroTik-Windows
+          path: dist/Configurador_MikroTik.exe
