@@ -1,0 +1,25 @@
+COMO EXECUTAR PELO POWERSHELL
+
+1. Extraia todo o ZIP para uma pasta.
+2. Instale Python para Windows, se ainda não estiver instalado.
+   Durante a instalação, marque a opção "Add Python to PATH".
+3. Abra o PowerShell dentro da pasta Configurador_MikroTik.
+4. Se o Windows bloquear a execução do script nesta sessão, execute:
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+5. Para abrir o configurador:
+   .\EXECUTAR_NO_POWERSHELL.ps1
+
+PARA GERAR O EXECUTÁVEL EXE
+
+Execute:
+   .\GERAR_EXE_NO_POWERSHELL.ps1
+
+O arquivo será criado em:
+   .\dist\Configurador_MikroTik.exe
+
+Observações:
+- Os scripts PowerShell apenas iniciam ou compilam o aplicativo; a configuração
+  do MikroTik continua sendo gerada em arquivos .rsc para importação manual.
+- O EXE deve ser compilado no Windows.
+- A senha do certificado .p12 não é salva pelo aplicativo.
+- Valide os scripts RouterOS em equipamento de teste antes de usar em produção.

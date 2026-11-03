@@ -1,0 +1,28 @@
+CONFIGURADOR MIKROTIK - PRIMEIRA VERSAO
+
+Arquivos:
+- configurador_mikrotik.py: aplicativo com interface gráfica.
+- COMPILAR_EXE_NO_WINDOWS.bat: gera o EXE no Windows usando PyInstaller.
+
+IMPORTANTE SOBRE O EXE
+Este ambiente de desenvolvimento é Linux e não possui PyInstaller nem compilador
+Windows. Por isso não foi possível produzir/testar o executável .exe aqui.
+O arquivo BAT automatiza a compilação em uma máquina Windows de desenvolvimento.
+Depois de compilado, o usuário final abre o EXE normalmente e não precisa de Python.
+
+ESCOPO DESTA VERSAO
+- Cadastro de um novo condomínio (não há lista prévia).
+- Prefixo LAN /24 configurável.
+- Seleção de certificado .p12/.pfx.
+- Nome do certificado configurável.
+- Geração de script para RouterOS 6, 7 ou ambos.
+- Copia o certificado para a pasta do pacote.
+- Não grava a senha do certificado.
+- Gera LEIA-ME com os passos de importação pelo Winbox.
+
+AINDA NAO IMPLEMENTADO
+- Conexão direta por MAC/Winbox.
+- Leitura automática da versão do RouterOS.
+- Aplicação automática do script.
+- Teste real em roteadores RouterOS 6 e 7.
+- Validação criptográfica do .p12 com senha.
